@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+.button_main {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    background: #DCDCDC;
+    text-align: center;
+    padding: 15px 30px;
+    margin: 5px 0 10px 0;
+    text-decoration: none;
+    color: black;
+}
+.button_main:hover {
+    background-color: #c0c0c0;
+    color: black;
+}
