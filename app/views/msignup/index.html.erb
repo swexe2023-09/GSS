@@ -1,0 +1,10 @@
+<% @managers.each do |e| %>
+    <p>
+        <li>
+            <%= e.uid %>
+            <%=link_to '削除', msignup_path(e) , data: { turbo_method: :delete },method: :delete %>
+        </li>
+    </p>
+<% end %>
+
+<%= link_to "登録" ,msignup_new_path %>

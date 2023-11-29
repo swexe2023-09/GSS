@@ -1,0 +1,2 @@
+module MsignupHelper
+end
