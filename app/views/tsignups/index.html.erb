@@ -1,0 +1,18 @@
+<% if flash[:notice] %>
+    <%= flash[:notice] %>
+<% end %>
+
+<%= link_to '新規会員登録はこちら', new_tsignup_path %></br>
+
+<%= link_to 'ログインはこちら'%>
+
+<%= link_to "始めに戻る", root_path %></br>
+
+<h2>登録ユーザー一覧</h2>
+
+<% @members.each do |member| %>
+    <div>
+        <%= member.uid %>
+        <%= link_to '削除', tsignup_path(member), data: {turbo_method: :delete}, method: :delete %>
+    </div>
+<% end %>

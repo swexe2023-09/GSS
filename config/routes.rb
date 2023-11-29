@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
+  resources :tsignups, only: [:index, :new, :create, :destroy]
+  get 'tsignups/index'
+  post "tsignups/create"
   root 'top#main'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
