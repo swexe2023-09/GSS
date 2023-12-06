@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   post "tsignups/create"
   root 'top#main'
 
+  get 'mlogin/main'
+  get 'mlogin/login'
+  post 'mlogin/login'
+  get 'mlogin/logout'
+  
   get 'msignup/index'
   get 'msignup/new'
   post 'msignup/create'

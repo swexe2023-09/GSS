@@ -8,3 +8,7 @@
 <% end %>
 
 <%= link_to "登録" ,msignup_new_path %>
+<%= link_to "ログイン" ,mlogin_main_path %>
+<% if current_manager %>
+    <%= link_to "ログアウト" ,mlogin_logout_path %>
+<% end %>
