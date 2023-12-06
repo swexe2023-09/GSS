@@ -1,5 +1,3 @@
-require 'bcrypt'
-
 class MsignupController < ApplicationController
   def index
     @managers = Manager.all
@@ -14,7 +12,7 @@ class MsignupController < ApplicationController
     if @manager.save
       redirect_to msignup_index_path
     else
-      render 'new'
+      render new
     end
   end
 
