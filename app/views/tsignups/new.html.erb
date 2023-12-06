@@ -2,10 +2,10 @@
 <%= form_tag '/tsignups/create', method: :post, data: { turbo:false } do%>
     <%= label_tag :uid, '名前：' %>
     <%= text_field_tag :uid %></br>
-    <%= label_tag :uid, '職種：' %>
+    <%= label_tag :jid, '職種：' %>
     <%= text_field_tag :jid %></br>
-    <%= label_tag :pass, 'パスワード：' %>
-    <%= password_field_tag :pass %></br>
+    <%= label_tag :password, 'パスワード：' %>
+    <%= password_field_tag :password %></br>
     <%= label_tag :password_confirmation, 'パスワード(確認)：' %>
     <%= password_field_tag :password_confirmation %></br>
     
