@@ -1,0 +1,29 @@
+<h1>タスク作成</h1>
+<%= form_tag tasks_create_path, method: :post, data: { turbo: false } do %>
+<p>
+    <%= label_tag :name, '作業名' %>
+    <%= text_field_tag :name %>
+</p>
+<p> 
+    <%= label_tag :job, '役職' %>
+    <%= text_field_tag :job %>
+</p>
+<p>
+    <%= label_tag :date, '締切' %>
+    <%= text_field_tag :date %>
+</p>
+<p>
+    <%= label_tag :time, '作業時間' %>
+    <%= text_field_tag :time %>
+</p>
+<p>
+    <%= label_tag :content, '作業内容' %>
+    <%= text_field_tag :content %>
+</p>
+<p>
+    <%= submit_tag '登録' %>
+</p>
+<% end %>
+
+<br>
+<%= link_to "トップに戻る" ,tasks_index_path %>

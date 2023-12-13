@@ -10,19 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2023_11_22_083649) do
-  create_table "members", force: :cascade do |t|
-    t.string "uid"
-    t.string "pass"
-    t.string "jid"
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_11_23_043506) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_06_084158) do
   create_table "managers", force: :cascade do |t|
     t.string "uid"
     t.string "pass"
     t.string "gid"
->>>>>>> Y
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "uid"
+    t.string "pass"
+    t.string "jid"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.integer "date"
+    t.integer "time"
+    t.string "job"
+    t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

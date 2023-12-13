@@ -1,0 +1,16 @@
+<h1>マネージャーページ</h1>
+<p>登録済みのタスクがあります</p>
+
+<% @tasks.each do |e| %>
+    <p>
+            役職 / 作業名 / 締め切り
+        <li>
+            <%= e.job %>/<%= e.name %>/<%= e.date %>
+            <%=link_to '削除', "/tasks/#{e.id}" , data: { turbo_method: :delete },method: :delete %>
+            <%=link_to '編集', "/tasks/#{e.id}/edit"%>
+        </li>
+    </p>
+<% end %>
+
+<%= link_to "タスクを登録する" ,tasks_new_path %>
+<%= link_to "ログアウト" ,mlogin_logout_path %>

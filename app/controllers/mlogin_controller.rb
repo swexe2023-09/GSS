@@ -1,7 +1,7 @@
 class MloginController < ApplicationController
   def main
     if current_manager != nil
-      render "main"
+      redirect_to tasks_index_path
     else
       render "login"
     end
@@ -9,11 +9,9 @@ class MloginController < ApplicationController
 
   def login
     manager = Manager.find_by(uid: params[:uid])
-    logger.debug manager.pass
-    logger.debug params[:pass]
     if manager && BCrypt::Password.new(manager.pass) == params[:pass]
       session[:login_uid] = params[:uid]
-      redirect_to root_path
+      redirect_to tasks_index_path
     else
       render "error"
     end
