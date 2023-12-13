@@ -14,18 +14,40 @@
  *= require_self
  */
 
-.button_main {
-    display: flex;
-    align-items: center;
-    border-radius: 30px;
-    background: #DCDCDC;
+body {
+    width: 700px;
+    margin: 0 auto;
+    background: #336699
+}
+
+.title {
+    font-size: 100px; 
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Caveat', cursive;
+    text-shadow:
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000;
+}
+
+.button_top_main  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
     text-align: center;
     padding: 15px 30px;
-    margin: 5px 0 10px 0;
     text-decoration: none;
     color: black;
 }
-.button_main:hover {
-    background-color: #c0c0c0;
+
+.button_top_main:hover {
+    background-color: #8EB8FF;
     color: black;
 }
+

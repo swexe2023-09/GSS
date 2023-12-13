@@ -1,3 +1,7 @@
-<h1>Welcome page</h1>
-<%= link_to "マネージャーはこちら", class: "button_main" %></br>
-<%= link_to "メンバーはこちら", tsignups_path , class: "button_main" %>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
+
+<h1 class="title">Group Smart Schedule</h1>
+<%= link_to "マネージャーはこちら",msignup_index_path, class: "button_top_main" %></br>
+<%= link_to "メンバーはこちら", tsignups_path , class: "button_top_main" %>
