@@ -1,9 +1,9 @@
 <h1>マネージャーページ</h1>
 <p>登録済みのタスクがあります</p>
 
+<p>役職 / 作業名 / 締め切り</p>
 <% @tasks.each do |e| %>
     <p>
-            役職 / 作業名 / 締め切り
         <li>
             <%= e.job %>/<%= e.name %>/<%= e.date %>
             <%=link_to '削除', "/tasks/#{e.id}" , data: { turbo_method: :delete },method: :delete %>

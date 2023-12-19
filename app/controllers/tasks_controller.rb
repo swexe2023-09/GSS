@@ -20,7 +20,7 @@ class TasksController < ApplicationController
   
   def update
     task = Task.find(params[:id])
-    task.update(name: params[:name], date: params[:date], time: params[:time], job: params[:job], content: params[:content])
+    task.update(name: params[:task][:name], date: params[:task][:date], time: params[:task][:time], job: params[:task][:job], content: params[:task][:content])
     redirect_to tasks_index_path
   end
 

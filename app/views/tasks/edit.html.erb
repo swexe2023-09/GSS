@@ -1,27 +1,27 @@
 <h1>タスク編集</h1>
-<%= form_tag tasks_update_path, method: :patch, data: { turbo: false } do %>
+<%= form_for @task, url:{action: :update} do |f| %>
 <p>
-    <%= label_tag :name, '作業名' %>
-    <%= text_field_tag :name %>
+    <%= f.label :name, '作業名' %>
+    <%= f.text_field :name %>
 </p>
 <p> 
-    <%= label_tag :job, '役職' %>
-    <%= text_field_tag :job %>
+    <%= f.label :job, '役職' %>
+    <%= f.text_field :job %>
 </p>
 <p>
-    <%= label_tag :date, '締切' %>
-    <%= text_field_tag :date %>
+    <%= f.label :date, '締切' %>
+    <%= f.text_field :date %>
 </p>
 <p>
-    <%= label_tag :time, '作業時間' %>
-    <%= text_field_tag :time %>
+    <%= f.label :time, '作業時間' %>
+    <%= f.text_field :time %>
 </p>
 <p>
-    <%= label_tag :content, '作業内容' %>
-    <%= text_field_tag :content %>
+    <%= f.label :content, '作業内容' %>
+    <%= f.text_field :content %>
 </p>
 <p>
-    <%= submit_tag '更新' %>
+    <%= f.submit '更新' %>
 </p>
 <% end %>
 

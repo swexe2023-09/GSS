@@ -3,10 +3,11 @@ Rails.application.routes.draw do
   get 'tasks/new'
   post 'tasks/create'
   patch 'tasks/:id', to: 'tasks#update'
+  get 'tasks/:id', to: 'tasks#edit'
   get 'tasks/:id/edit', to: 'tasks#edit'
   get 'tasks/destroy'
   delete 'tasks/:id' ,to: 'tasks#destroy'
-  resources :tasks
+  #resources :tasks
   
   get 'tlogins/main'
   get 'tlogins/login_move'
