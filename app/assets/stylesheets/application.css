@@ -51,3 +51,39 @@ body {
     color: black;
 }
 
+.mnew{
+    margin: auto; 
+    text-align: center;
+}
+.mnew_title{
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.mnew_column{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.mnew_column p{
+    margin: 40px 0 20px 0;
+}
+.mnew_button {
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.mnew_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
