@@ -13,6 +13,10 @@ class TasksController < ApplicationController
       redirect_to tasks_index_path
     end
   end
+  
+  def show
+    @task = Task.find(params[:id])
+  end
 
   def edit
     @task = Task.find(params[:id])
