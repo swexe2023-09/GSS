@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  post 'finish/:id' ,to: 'finish#create'
+  delete 'finish/:id' ,to: 'finish#destroy'
+  resources :finish, only: [:create, :destroy]
+  
   get 'tasks/index'
   get 'tasks/new'
   post 'tasks/create'

@@ -1,4 +1,20 @@
-<h1>Tlogins#main</h1>
-<p>Find me in app/views/tlogins/main.html.erb</p>
+<h1>メンバーページ</h1>
+<p>タスクがあります</p>
+
+<p>役職 / 作業名 / 締め切り</p>
+<% @tasks = Task.all %>
+<% @tasks.each do |e| %>
+    <p>
+        <li>
+            <%= e.job %>/<%= e.name %>/<%= e.date %>
+            <%=link_to '表示', "/tasks/#{e.id}"%>
+            <% if e.completed?(current_member) %>
+                <%= link_to '完了解除', finish_path(e), data: { turbo_method: :delete } %>
+            <% else %>
+                <%= link_to '完了', finish_index_path(task_id: e.id), data: { "turbo_method": :post }  %>
+            <% end %>
+        </li>
+    </p>
+<% end %>
 
 <%=link_to 'ログアウト', tlogins_logout_path %>

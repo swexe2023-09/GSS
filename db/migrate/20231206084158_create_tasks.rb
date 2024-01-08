@@ -6,6 +6,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :time
       t.string :job
       t.string :content
+      
 
       t.timestamps
     end
