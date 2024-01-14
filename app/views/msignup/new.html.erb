@@ -1,29 +1,42 @@
-<h2>マネージャーを登録する</h2>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<%= form_tag '/msignup/create', method: :post, data: { turbo: false } do %>
-<p>
-    <%= label_tag :uid, 'ユーザーID' %>
-    <%= text_field_tag :uid %>
-</p>
-<p>
-    <%= label_tag :gid, 'グループID' %>
-    <%= text_field_tag :gid %>
-</p>
-<p>
-    <%= label_tag :password, 'パスワード' %>
-    <%= password_field_tag :password %>
-</p>
-<p>
-    <%= label_tag :password_confirmation, 'パスワード(確認)' %>
-    <%= password_field_tag :password_confirmation %>
-</p>
-<p>
-    <%= submit_tag '登録' %>
-</p>
-<% end %>
-
-
-<br>
-<%= link_to "ユーザー一覧に戻る" ,:back %>
-<br>
-<%= link_to "トップに戻る" , root_path %>
+<div class="mnew">
+    
+    <div class="mnew_title">
+        <h1>マネージャーを登録する</h1>
+    </div>
+    
+    <%= form_tag '/msignup/create', method: :post, data: { turbo: false } do %>
+    
+    <div class="mnew_column">
+        <p>
+            <%= label_tag :uid, 'ユーザーID' %>
+            <%= text_field_tag :uid %>
+        </p>
+        <p>
+            <%= label_tag :gid, 'グループID' %>
+            <%= text_field_tag :gid %>
+        </p>
+        <p>
+            <%= label_tag :password, 'パスワード' %>
+            <%= password_field_tag :password %>
+        </p>
+        <p>
+            <%= label_tag :password_confirmation, 'パスワード(確認)' %>
+            <%= password_field_tag :password_confirmation %>
+        </p>
+        <p>
+            <%= submit_tag '登録' %>
+        </p>
+    </div>
+    
+    <% end %>
+    
+    
+    </br>
+        <%= link_to "ユーザー一覧に戻る" ,:back, class: "mnew_button" %></br>
+        <%= link_to "トップに戻る" , root_path, class: "mnew_button" %>
+    
+</div>
