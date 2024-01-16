@@ -4,6 +4,9 @@
 <p>役職 / 作業名 / 締め切り</p>
 <% @tasks = Task.all %>
 <% @tasks.each do |e| %>
+<% finish = Finish.find_by(task_id: e.id) %>
+<% myfinish = Finish.find_by(member_id: current_member) %>
+<% if !finish && !myfinish %>
     <p>
         <li>
             <%= e.job %>/<%= e.name %>/<%= e.date %>
@@ -15,6 +18,8 @@
             <% end %>
         </li>
     </p>
+<% end %>   
 <% end %>
 
+<%= link_to "終了タスク一覧" , tasks_finish_path %>
 <%=link_to 'ログアウト', tlogins_logout_path %>
