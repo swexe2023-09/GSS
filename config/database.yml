@@ -26,7 +26,7 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: test_render_8lbl
-  username: test_render_8lbl_user
-  password: <%= ENV['HA0083tYMgLKjF5rDRFquH0Q8OB2W91l'] %>
-  url: <%= ENV['postgres://test_render_8lbl_user:HA0083tYMgLKjF5rDRFquH0Q8OB2W91l@dpg-cl0se0n6ct8s73et95mg-a/test_render_8lbl'] %>
+  database: software_676s
+  username: software_676s_user
+  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
