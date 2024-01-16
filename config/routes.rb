@@ -36,4 +36,14 @@ Rails.application.routes.draw do
   post 'msignup/destroy'
   #root 'msignup#index'
   resources :msignup, only: [:index, :new, :create, :destroy]
+  
+  get 'group_chats/index'
+  get 'group_chats/new'
+  post 'group_chats/create'
+  resources :group_chats, only: [:index, :new, :create, :destroy]
+  
+
+  resources :chat_rooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 end

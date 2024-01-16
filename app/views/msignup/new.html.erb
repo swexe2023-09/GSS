@@ -2,41 +2,38 @@
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
 </style>
 
-<div class="mnew">
+<div class="signups_new">
     
-    <div class="mnew_title">
-        <h1>マネージャーを登録する</h1>
+    <div class="signups_new_title">
+        <h1>新規会員登録</h1>
     </div>
     
     <%= form_tag '/msignup/create', method: :post, data: { turbo: false } do %>
     
-    <div class="mnew_column">
-        <p>
-            <%= label_tag :uid, 'ユーザーID' %>
-            <%= text_field_tag :uid %>
-        </p>
-        <p>
-            <%= label_tag :gid, 'グループID' %>
-            <%= text_field_tag :gid %>
-        </p>
-        <p>
-            <%= label_tag :password, 'パスワード' %>
-            <%= password_field_tag :password %>
-        </p>
-        <p>
-            <%= label_tag :password_confirmation, 'パスワード(確認)' %>
-            <%= password_field_tag :password_confirmation %>
-        </p>
-        <p>
-            <%= submit_tag '登録' %>
-        </p>
-    </div>
+        <div class="signups_new_column">
+            <p>
+                <%= label_tag :uid, 'ユーザーID' %>
+                <%= text_field_tag :uid %>
+            </p>
+            <p>
+                <%= label_tag :gid, 'グループID' %>
+                <%= text_field_tag :gid %>
+            </p>
+            <p>
+                <%= label_tag :password, 'パスワード' %>
+                <%= password_field_tag :password %>
+            </p>
+            <p>
+                <%= label_tag :password_confirmation, 'パスワード(確認)' %>
+                <%= password_field_tag :password_confirmation %>
+            </p>
+        </div></br>
+            <%= submit_tag '登録', class: "signups_new_button" %>
+
     
-    <% end %>
+    <% end %></br>
     
-    
-    </br>
-        <%= link_to "ユーザー一覧に戻る" ,:back, class: "mnew_button" %></br>
-        <%= link_to "トップに戻る" , root_path, class: "mnew_button" %>
+    <%= link_to "ユーザー一覧に戻る" ,:back, class: "signups_new_button" %></br>
+    <%= link_to "トップに戻る" , root_path, class: "signups_new_button" %>
     
 </div>

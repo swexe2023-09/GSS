@@ -1,14 +1,26 @@
-<% @managers.each do |e| %>
-    <p>
-        <li>
-            <%= e.uid %>
-            <%=link_to '削除', msignup_path(e) , data: { turbo_method: :delete },method: :delete %>
-        </li>
-    </p>
-<% end %>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<%= link_to "新規登録" ,msignup_new_path %>
-<%= link_to "ログイン" ,mlogin_main_path %>
-<% if current_manager %>
-    <%= link_to "ログアウト" ,mlogin_logout_path %>
-<% end %>
+<div class="signup_index">
+
+    <div class="signup_index_title">
+        <h1>登録ユーザー一覧</h1>
+    </div>
+
+    <div class="signup_index_column">
+        <% @managers.each do |e| %>
+            <p>
+                ユーザー名：<%= e.uid %>
+                <%=link_to '削除', msignup_path(e) , data: { turbo_method: :delete },method: :delete %>
+            </p>
+        <% end %>
+    </div></br>
+    
+    <%= link_to "新規登録" ,msignup_new_path, class: "signups_index_button" %></br>
+    <%= link_to "ログイン" ,mlogin_main_path, class: "signups_index_button" %></br>
+    <% if current_manager %>
+        <%= link_to "ログアウト" ,mlogin_logout_path, class: "signups_index_button" %>
+    <% end %>
+    
+</div>    

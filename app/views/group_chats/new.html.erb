@@ -1,0 +1,21 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
+
+
+<div class="create_chat">
+  
+  <h1 class="create_chat_title">チャットルーム作成</h1>
+  
+  <div class="create_chat_column">
+    <%= form_tag group_chats_create_path, method: :post, data: { turbo: false } do %>
+      <p>
+        <%= label_tag :title, 'チャットルーム名：' %>
+        <%= text_field_tag :title %>
+      </p>
+  </div></br>
+  
+      <%= submit_tag '作成', class: "create_chat_button" %>
+    <% end %></br>
+
+</div>

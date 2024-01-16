@@ -1,0 +1,35 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
+
+<div class="group_index">
+  
+  <div class="group_index_title">
+    <h1>チャットルーム一覧</h1>
+  </div>
+  
+  <div class="group_index_column">
+    <% @group_chats.each do |group| %>
+      <div class="chatroom">
+        <p>
+          <h3 class="chat_name"><%= group.title %></h3>
+          <% if group.chat_room.present? %>
+            <%= link_to "チャット", chat_room_path(group.chat_room.id) , class: "chat_button"%>
+            <%= link_to '削除', group_chat_path(group), data: { turbo_method: :delete }, method: :delete, class: "delete_button"%>
+          <% else %>
+            <p>No chat room available</p>
+          <% end %>
+        </p>
+      </div>
+    <% end %>
+  </div></br>
+  
+  <% if current_member.present? %>
+    <%= link_to 'チャットルーム作成', group_chats_new_path, class: "group_index_button" %></br>
+    <%= link_to '戻る', tlogins_main_path, class: "group_index_button" %></br>
+  <% elsif current_manager.present? %>
+    <%= link_to 'チャットルーム作成', group_chats_new_path, class: "group_index_button" %></br>
+    <%= link_to '戻る', tasks_index_path, class: "group_index_button" %></br>
+  <% end %>
+
+</div>

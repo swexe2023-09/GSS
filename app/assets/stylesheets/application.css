@@ -51,16 +51,17 @@ body {
     color: black;
 }
 
-.mnew{
+
+.signup_index{
     margin: auto; 
     text-align: center;
 }
-.mnew_title{
+.signup_index_title{
     font-size: 25px;
     font-family: 'Kiwi Maru', serif;
     color: #FFFFFF;
 }
-.mnew_column{
+.signup_index_column{
     font-weight: bold;
     width: 500px;
     margin: auto; 
@@ -68,10 +69,11 @@ body {
     background: #BAD3FF;
     border: solid 5px; 
 }
-.mnew_column p{
-    margin: 40px 0 20px 0;
+.signup_index_column p{
+    margin: 40px 0 40px 0;
 }
-.mnew_button {
+.signups_index_button  {
+    font-size: 25px;
     font-family: 'Kiwi Maru', serif;
     display: block;
     width: fit-content;
@@ -83,7 +85,290 @@ body {
     text-decoration: none;
     color: black;
 }
-.mnew_button:hover {
+
+.signups_index_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
+
+
+
+.signups_new{
+    margin: auto; 
+    text-align: center;
+}
+.signups_new_title{
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.signups_new_column{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.signups_new_column p{
+    margin: 40px 0 40px 0;
+}
+.signups_new_button  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.signups_new_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
+
+
+
+.logins{
+    margin: auto; 
+    text-align: center;
+}
+.logins_title{
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.logins_column{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.logins_column p{
+    margin: 40px 0 40px 0;
+}
+.logins_button  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.logins_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
+
+
+
+.tasks{
+    margin: auto; 
+    text-align: center;
+}
+.tasks_title{
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.tasks_column{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.tasks_column p{
+    margin: 40px 0 40px 0;
+}
+.tasks_button  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.tasks_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
+
+
+
+.group_index{
+    margin: auto; 
+    text-align: center;
+}
+.group_index_title{
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.group_index_column{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.chatroom {
+    display: flex;
+}
+.chat_name{
+    margin: 15px 30px 0 30px;
+}
+.chat_button  {
+    float: right;
+    font-size: 15px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: 10px 10px 10px 10px; 
+    border-radius: 50px;
+    background: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: black;
+}
+.chat_button:hover {
+    background-color: #dcdcdc;
+    color: black;
+}
+.delete_button  {
+    float: right;
+    font-size: 15px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: 10px 10px 10px 10px; 
+    border-radius: 50px;
+    background: #cd5c5c;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+}
+.delete_button:hover {
+    background-color: #b22222;
+    color: white;
+}
+.group_index_button  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.group_index_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
+
+
+
+.create_chat{
+    margin: auto; 
+    text-align: center;
+}
+.create_chat_title{
+    font-size: 50px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.create_chat_column{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.create_chat_column p{
+    margin: 40px 0 40px 0;
+}
+.create_chat_button  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: auto; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.create_chat_button:hover {
+    background-color: #8EB8FF;
+    color: black;
+}
+
+
+
+.chat_room{
+    margin: auto; 
+    text-align: center;
+}
+.chat_title{
+    font-size: 50px;
+    font-family: 'Kiwi Maru', serif;
+    color: #FFFFFF;
+}
+.chat_message{
+    font-weight: bold;
+    width: 500px;
+    margin: auto; 
+    text-align: center;
+    background: #BAD3FF;
+    border: solid 5px; 
+}
+.chat_message p{
+    margin: 40px 0 40px 0;
+}
+.typing{
+    margin: 0 0 30px 150px;
+    position: fixed;
+    bottom: 10px;
+}
+.chat_button  {
+    font-size: 25px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    margin: 10px 250px 10px 10px; 
+    border-radius: 50px;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: black;
+}
+.chat_button:hover {
     background-color: #8EB8FF;
     color: black;
 }
