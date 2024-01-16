@@ -5,8 +5,7 @@
 <% @tasks = Task.all %>
 <% @tasks.each do |e| %>
 <% finish = Finish.find_by(task_id: e.id) %>
-<% myfinish = Finish.find_by(member_id: current_member) %>
-<% if !finish && !myfinish %>
+<% if !finish || finish.member_id == current_member.id %>
     <p>
         <li>
             <%= e.job %>/<%= e.name %>/<%= e.date %>

@@ -15,7 +15,7 @@ class TloginsController < ApplicationController
   def login
     member = Member.find_by(uid: params[:uid])
     if member && BCrypt::Password.new(member.pass) == params[:pass]
-      session[:login_uid] = params[:uid]
+      session[:member_uid] = params[:uid]
       redirect_to tlogins_main_path
     else
       render "error"
@@ -23,7 +23,7 @@ class TloginsController < ApplicationController
   end
 
   def logout
-    session.delete(:login_uid)
+    session.delete(:member_uid)
     render "top/main"
   end
 
