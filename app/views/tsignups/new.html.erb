@@ -1,15 +1,41 @@
-<h2>新規会員登録</h2>
-<%= form_tag '/tsignups/create', method: :post, data: { turbo:false } do%>
-    <%= label_tag :uid, '名前：' %>
-    <%= text_field_tag :uid %></br>
-    <%= label_tag :jid, '職種：' %>
-    <%= text_field_tag :jid %></br>
-    <%= label_tag :password, 'パスワード：' %>
-    <%= password_field_tag :password %></br>
-    <%= label_tag :password_confirmation, 'パスワード(確認)：' %>
-    <%= password_field_tag :password_confirmation %></br>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
+
+<div class="signups_new">
     
-    <%= submit_tag '登録' %>
-    <%= link_to "Topへ戻る", tsignups_path %></br>
+    <div class="signups_new_title">
+        <h1>新規会員登録</h1>
+    </div>
     
-<% end %>
+    
+    <%= form_tag '/tsignups/create', method: :post, data: { turbo:false } do%>
+        <div class="signups_new_column">
+            <p>
+                <%= label_tag :uid, '名前：' %>
+                <%= text_field_tag :uid %>
+            </p>
+            <p>
+                <%= label_tag :gid, 'グループID' %>
+                <%= text_field_tag :gid %>
+            </p>
+            <p>
+                <%= label_tag :jid, '職種：' %>
+                <%= text_field_tag :jid %>
+            </p>
+            <p>
+            <%= label_tag :password, 'パスワード：' %>
+            <%= password_field_tag :password %>
+            </p>
+            <p>
+            <%= label_tag :password_confirmation, 'パスワード(確認)：' %>
+            <%= password_field_tag :password_confirmation %>
+            </p>
+        </div></br>
+        
+        <%= submit_tag '登録', class: "signups_new_button"  %></br>
+        <%= link_to "一覧へ戻る", tsignups_path, class: "signups_new_button"  %></br>
+        
+    <% end %>
+    
+</div>

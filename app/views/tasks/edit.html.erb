@@ -1,29 +1,37 @@
-<h1>タスク編集</h1>
-<%= form_for @task, url:{action: :update} do |f| %>
-<p>
-    <%= f.label :name, '作業名' %>
-    <%= f.text_field :name %>
-</p>
-<p> 
-    <%= f.label :job, '役職' %>
-    <%= f.text_field :job %>
-</p>
-<p>
-    <%= f.label :date, '締切' %>
-    <%= f.text_field :date %>
-</p>
-<p>
-    <%= f.label :time, '作業時間' %>
-    <%= f.text_field :time %>
-</p>
-<p>
-    <%= f.label :content, '作業内容' %>
-    <%= f.text_field :content %>
-</p>
-<p>
-    <%= f.submit '更新' %>
-</p>
-<% end %>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<br>
-<%= link_to "トップに戻る" ,tasks_index_path %>
+<div class="tasks">
+    <div class="tasks_title">
+        <h1>タスク編集</h1>
+    </div>
+    <%= form_for @task, url:{action: :update} do |f| %>
+    <div class="tasks_column">
+        <p>
+            <%= f.label :name, '作業名：' %>
+            <%= f.text_field :name %>
+        </p>
+        <p> 
+            <%= f.label :job, '役職：' %>
+            <%= f.text_field :job %>
+        </p>
+        <p>
+            <%= f.label :date, '締切：' %>
+            <%= f.text_field :date %>
+        </p>
+        <p>
+            <%= f.label :time, '作業時間：' %>
+            <%= f.text_field :time %>
+        </p>
+        <p>
+            <%= f.label :content, '作業内容：' %>
+            <%= f.text_field :content %>
+        </p>
+    </div></br>
+        <%= f.submit '更新', class: "tasks_button" %>
+    <% end %>
+    
+    <br>
+    <%= link_to "トップに戻る" ,tasks_index_path, class: "tasks_button" %>
+</div>

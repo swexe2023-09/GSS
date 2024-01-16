@@ -2,17 +2,32 @@
     <%= flash[:notice] %>
 <% end %>
 
-<%= link_to '新規会員登録はこちら', new_tsignup_path %></br>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<%= link_to 'ログインはこちら', tlogins_login_move_path %>
-
-<%= link_to "始めに戻る", root_path %></br>
-
-<h2>登録ユーザー一覧</h2>
-
-<% @members.each do |member| %>
-    <div>
-        <%= member.uid %>
-        <%= link_to '削除', tsignup_path(member), data: {turbo_method: :delete}, method: :delete %>
+<div class="signup_index">
+    
+    <div class="signup_index_title">
+        <h1>登録ユーザー一覧</h1>
     </div>
-<% end %>
+    
+    <div class="signup_index_column">
+        <% @members.each do |member| %>
+            <p>
+                ユーザー名：<%= member.uid %>
+                <%= link_to '削除', tsignup_path(member), data: {turbo_method: :delete}, method: :delete %>
+            </p>
+        <% end %>
+    </div></br>
+    
+    
+    
+    <%= link_to '新規会員登録はこちら', new_tsignup_path, class: "signups_index_button" %></br>
+    
+    <%= link_to 'ログインはこちら', tlogins_login_move_path, class: "signups_index_button" %></br>
+    
+    <%= link_to "始めに戻る", root_path, class: "signups_index_button" %></br>
+        
+</div>
+

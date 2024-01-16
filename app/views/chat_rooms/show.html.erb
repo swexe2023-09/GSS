@@ -1,0 +1,57 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
+
+<div class="chat_room">    
+
+    <h1 class="chat_title">チャットルーム: <%= @chat_room.group_chat.title %></h1>
+    
+    <% if flash[:alert].present? %>
+      <div class="alert alert-danger">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <div class="chat_message">
+        <% if @messages %>
+            <% grouped_messages = @messages.group_by { |message| message.created_at.to_date } %>
+            <% grouped_messages.each do |date, messages| %>
+                <div>
+                    <span><%= date.strftime("%Y/%m/%d") %></span>
+                </div>
+                <% messages.each do |message| %>
+                    <div>
+                        <% if message.member == current_member %>
+                            <span><%= message.created_at.strftime("%H:%M") %></span>
+                            <div>
+                                <p><%= message.content %></p>
+                            </div>
+                        <% else %>
+                            <div>
+                                <strong><%= message.member.username %></strong>
+                            </div>
+                            
+                            <div>
+                                <p><%= message.content %></p>
+                            </div>
+                            <span><%= message.created_at.strftime("%H:%M") %></span>
+                        <% end %>
+                    </div>
+                <% end %>
+            <% end %>
+        <% else %>
+            <p>メッセージはありません。</p>
+        <% end %>
+    </div></br>
+    
+    <div class="typing">
+        <%= form_with(model: [ @chat_room, @message ], url: chat_room_messages_path(@chat_room)) do |form| %>
+            <%= form.text_area :content,required: true, rows: 1, placeholder: 'メッセージを入力してください' %>
+            <%= form.submit "送信" %>
+        <% end %>
+    </div></br>
+
+    
+    <%= link_to '一覧に戻る', group_chats_index_path ,class: "chat_button" %>
+    
+</div>

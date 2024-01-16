@@ -1,11 +1,29 @@
-<h2>ログイン画面</h2>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<%= form_tag '/tlogins/login', method: :post do %>
-    <%= label_tag :uid, 'ユーザー名：' %>
-    <%= text_field_tag :uid %></br>
-    <%= label_tag :pass, 'パスワード：' %>
-    <%= password_field_tag :pass %></br>
-    <%= submit_tag 'ログイン' %>
-<% end %>
+<div class="logins">
 
-<%= link_to "Topへ戻る", tsignups_path %></br>
+    <div class="logins_title">
+        <h1>ログイン</h1>
+    </div>
+    
+    <%= form_tag '/tlogins/login', method: :post do %>
+    
+        <div class="logins_column">
+            <p>
+                <%= label_tag :uid, 'ユーザー名：' %>
+                <%= text_field_tag :uid %>
+            </p>
+                <%= label_tag :pass, 'パスワード：' %>
+                <%= password_field_tag :pass %>
+            </p>
+        </div></br>
+        
+        <%= submit_tag 'ログイン', class: "logins_button" %>
+        
+    <% end %></br>
+    
+    <%= link_to "一覧へ戻る", tsignups_path, class: "logins_button" %></br>
+
+</div>

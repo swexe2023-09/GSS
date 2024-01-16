@@ -1,21 +1,36 @@
-<p>
-<strong>作業名：</strong>
-<%= @task.name %>
-</p>
-<p>
-<strong>役職:</strong>
-<%= @task.job %>
-</p>
-<p>
-<strong>締切:</strong>
-<%= @task.date %>
-</p>
-<p>
-<strong>作業時間:</strong>
-<%= @task.time %>
-</p>
-<p>
-<strong>作業内容:</strong>
-<%= @task.content %>
-</p>
-<%= link_to "一覧に戻る" ,tasks_index_path %>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
+
+<div class="tasks">
+    <div class="tasks_title">
+        <h1>タスク詳細</h1>
+    </div>
+    <div class="tasks_column">
+        <p>
+            <strong>作業名：</strong>
+            <%= @task.name %>
+        </p>
+        <p>
+            <strong>役職:</strong>
+            <%= @task.job %>
+        </p>
+        <p>
+            <strong>締切:</strong>
+            <%= @task.date %>
+        </p>
+        <p>
+            <strong>作業時間:</strong>
+            <%= @task.time %>
+        </p>
+        <p>
+            <strong>作業内容:</strong>
+            <%= @task.content %>
+        </p>
+    </div></br>
+    <% if current_member.present? %>
+      <%= link_to "一覧に戻る" ,tlogins_main_path, class: "tasks_button" %>
+    <% elsif current_manager.present? %>
+      <%= link_to "一覧に戻る" ,tasks_index_path, class: "tasks_button" %>
+    <% end %>
+</div>

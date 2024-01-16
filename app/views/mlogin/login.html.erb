@@ -1,10 +1,33 @@
-<%= form_tag '/mlogin/login', method: :post,data: { turbo: false } do %>
-    <%= label_tag :uid, 'ユーザーID' %>
-    <%= text_field_tag :uid %>
-    <%= label_tag :pass, 'パスワード' %>
-    <%= password_field_tag :pass %>
-    <%= submit_tag 'ログイン' %>
-<% end %>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<br>
-<%= link_to "トップに戻る" ,root_path %>
+<div class="logins">
+    
+    <div class="logins_title">
+        <h1>ログイン</h1>
+    </div>
+
+    <%= form_tag '/mlogin/login', method: :post,data: { turbo: false } do %>
+    
+        <div class="logins_column">
+            
+            <p>
+                <%= label_tag :uid, 'ユーザーID：' %>
+                <%= text_field_tag :uid %>
+            </p>
+            <p>
+                <%= label_tag :pass, 'パスワード：' %>
+                <%= password_field_tag :pass %>
+            </p>
+       </div></br>
+       
+        <%= submit_tag 'ログイン', class: "logins_button" %>
+            
+ 
+        
+    <% end %></br>
+    
+    <%= link_to "トップに戻る", root_path, class: "logins_button" %>
+
+</br>
