@@ -15,7 +15,7 @@
  */
 
 body {
-    width: 700px;
+    width: 100%;
     margin: 0 auto;
     background: #336699
 }
@@ -173,12 +173,12 @@ body {
 
 
 
-.tasks{
+.tasks_body{
     margin: auto; 
     text-align: center;
 }
 .tasks_title{
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Kiwi Maru', serif;
     color: #FFFFFF;
 }
@@ -192,6 +192,12 @@ body {
 }
 .tasks_column p{
     margin: 40px 0 40px 0;
+}
+.tasks_subtitle{
+    font-size: 30px;
+}
+.tasks_item{
+    font-size: 20px;
 }
 .tasks_button  {
     font-size: 25px;
@@ -226,6 +232,7 @@ body {
     font-weight: bold;
     width: 500px;
     margin: auto; 
+    padding: 10px 0 10px 0; 
     text-align: center;
     background: #BAD3FF;
     border: solid 5px; 
@@ -236,7 +243,7 @@ body {
 .chat_name{
     margin: 15px 30px 0 30px;
 }
-.chat_button  {
+.chatroom_button  {
     float: right;
     font-size: 15px;
     font-family: 'Kiwi Maru', serif;
@@ -249,7 +256,7 @@ body {
     text-decoration: none;
     color: black;
 }
-.chat_button:hover {
+.chatroom_button:hover {
     background-color: #dcdcdc;
     color: black;
 }
@@ -341,7 +348,7 @@ body {
 }
 .chat_message{
     font-weight: bold;
-    width: 500px;
+    width: 700px;
     margin: auto; 
     text-align: center;
     background: #BAD3FF;
@@ -350,25 +357,77 @@ body {
 .chat_message p{
     margin: 40px 0 40px 0;
 }
-.typing{
-    margin: 0 0 30px 150px;
-    position: fixed;
-    bottom: 10px;
+.message_right{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px
 }
-.chat_button  {
-    font-size: 25px;
+.message_right p{
+    max-width: 25em;
+    word-wrap: break-word;
+    border-radius: 50px;
+    background: #adff2f;
+    padding: 10px 10px 10px 10px;
+    border: solid 2px;
+    margin-top: -3px;
+}
+.message_right span{
+    margin: 20px 15px 0 0;
+}
+.message_left{
+    display: flex;
+    align-items: flex-start;
+    margin-left: 10px
+}
+.message_left p{
+    max-width: 25em;
+    word-wrap: break-word;
+    border-radius: 50px;
+    background: #d3d3d3;
+    margin-left: -40px;
+    margin-top: 30px;
+    padding: 10px 10px 10px 10px;
+    border: solid 2px;
+}
+.message_left span{
+    margin: 55px  0 0 15px;
+}
+.typing{
+    display: flex;
+    position: fixed;
+    margin: 0 0 0 700px;
+    bottom: 0;
+}
+.message-form {
+    height: 40px;
+    margin-left: -60px; /* テキストエリアとボタンの間に右側の余白を設定 */
+    width: 700px;
+    padding-top: 7px;
+    font-size: 30px;
+}
+.send-button {
+    font-size: 20px;
     font-family: 'Kiwi Maru', serif;
     display: block;
     width: fit-content;
-    margin: 10px 250px 10px 10px; 
-    border-radius: 50px;
     background: #BAD3FF;
     text-align: center;
-    padding: 15px 30px;
+    padding: 5px 10px;
     text-decoration: none;
     color: black;
 }
-.chat_button:hover {
+.back-button {
+    font-size: 19px;
+    font-family: 'Kiwi Maru', serif;
+    display: block;
+    width: fit-content;
+    background: #BAD3FF;
+    text-align: center;
+    padding: 10px 10px 0 10px;
+    text-decoration: none;
+    color: black;
+}
+.back-button:hover {
     background-color: #8EB8FF;
     color: black;
 }

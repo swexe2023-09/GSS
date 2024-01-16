@@ -2,21 +2,33 @@
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
 </style>
 
-<p>役職 / 作業名 / 締め切り</p>
-<% @tasks.each do |e| %>
-<% finish = Finish.find_by(task_id: e.id) %>
-    <% if !finish %>
-        <p>
-            <li>
-                <%= e.job %>/<%= e.name %>/<%= e.date %>
-                <%=link_to '表示', "/tasks/#{e.id}"%>
-                <%=link_to '削除', "/tasks/#{e.id}" , data: { turbo_method: :delete },method: :delete %>
-                <%=link_to '編集', "/tasks/#{e.id}/edit"%>
-            </li>
-        </p>
-    <% end %>
-<% end %>
-
-<%= link_to "終了タスク一覧" ,tasks_finish_path %>
-<%= link_to "タスクを登録する" ,tasks_new_path %>
-<%= link_to "ログアウト" ,mlogin_logout_path %>
+<div class="tasks_body">
+    <div class="tasks_title">
+        <h1>マネージャーページ<h1>
+    </div>
+    <div class="tasks_column">
+        <div class="tasks_subtitle">
+            <p>作業一覧</p>
+        </div>
+        <div class="tasks_item">
+            <p>役職 / 作業名 / 締め切り</p>
+            <% @tasks.each do |e| %>
+            <% finish = Finish.find_by(task_id: e.id) %>
+                <% if !finish %>
+                    <p>
+                        <li>
+                            <%= e.job %>/<%= e.name %>/<%= e.date %>
+                            <%=link_to '表示', "/tasks/#{e.id}"%>
+                            <%=link_to '削除', "/tasks/#{e.id}" , data: { turbo_method: :delete },method: :delete %>
+                            <%=link_to '編集', "/tasks/#{e.id}/edit"%>
+                        </li>
+                    </p>
+                <% end %>
+            <% end %>
+        </div></br>
+    </div></br>
+    <%= link_to "メッセージ" ,group_chats_index_path, class: "tasks_button" %></br>
+    <%= link_to "終了タスク一覧" ,tasks_finish_path, class: "tasks_button" %></br>
+    <%= link_to "タスクを登録する" ,tasks_new_path, class: "tasks_button" %></br>
+    <%= link_to "ログアウト" ,mlogin_logout_path, class: "tasks_button" %></br>
+</div>

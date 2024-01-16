@@ -22,19 +22,23 @@
                 <% messages.each do |message| %>
                     <div>
                         <% if message.member == current_member %>
-                            <span><%= message.created_at.strftime("%H:%M") %></span>
-                            <div>
-                                <p><%= message.content %></p>
+                            <div class="message_right">
+                                <span><%= message.created_at.strftime("%H:%M") %></span>
+                                <div>
+                                    <p><%= message.content %></p>
+                                </div>
                             </div>
                         <% else %>
-                            <div>
-                                <strong><%= message.member.username %></strong>
+                            <div class="message_left">
+                                <div>
+                                    <strong><%= message.member.username %></strong>
+                                </div>
+                                
+                                <div>
+                                    <p><%= message.content %></p>
+                                </div>
+                                <span><%= message.created_at.strftime("%H:%M") %></span>
                             </div>
-                            
-                            <div>
-                                <p><%= message.content %></p>
-                            </div>
-                            <span><%= message.created_at.strftime("%H:%M") %></span>
                         <% end %>
                     </div>
                 <% end %>
@@ -44,14 +48,11 @@
         <% end %>
     </div></br>
     
-    <div class="typing">
-        <%= form_with(model: [ @chat_room, @message ], url: chat_room_messages_path(@chat_room)) do |form| %>
-            <%= form.text_area :content,required: true, rows: 1, placeholder: 'メッセージを入力してください' %>
-            <%= form.submit "送信" %>
-        <% end %>
-    </div></br>
+    <%= form_with(model: [ @chat_room, @message ], url: chat_room_messages_path(@chat_room)) do |form| %>
+        <div class="typing">
+            <%= form.text_area :content, class: "message-form", required: true, rows: 1, placeholder: 'メッセージを入力してください' %>
+            <%= form.submit "送信", class: "send-button" %><%= link_to '戻る', group_chats_index_path ,class: "back-button" %>
+        </div>
+    <% end %>
 
-    
-    <%= link_to '一覧に戻る', group_chats_index_path ,class: "chat_button" %>
-    
 </div>

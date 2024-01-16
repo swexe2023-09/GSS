@@ -7,15 +7,17 @@
   
   <h1 class="create_chat_title">チャットルーム作成</h1>
   
-  <div class="create_chat_column">
-    <%= form_tag group_chats_create_path, method: :post, data: { turbo: false } do %>
-      <p>
-        <%= label_tag :title, 'チャットルーム名：' %>
-        <%= text_field_tag :title %>
-      </p>
-  </div></br>
   
+    <%= form_tag group_chats_create_path, method: :post, data: { turbo: false } do %>
+      <div class="create_chat_column">
+        <p>
+          <%= label_tag :title, 'チャットルーム名：' %>
+          <%= text_field_tag :title %>
+        </p>
+      </div></br>
+    
       <%= submit_tag '作成', class: "create_chat_button" %>
     <% end %></br>
+    <%= link_to '戻る', group_chats_index_path, class: "group_index_button" %>
 
 </div>

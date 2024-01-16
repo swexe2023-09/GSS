@@ -1,22 +1,35 @@
-<h1>終了タスク一覧</h1>
-<p>以下のタスクが終了しています</p>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
+</style>
 
-<% @finishes.each do |e| %>
-<% task = Task.find(e.task_id) %>
-<% member = Member.find(e.member_id) %>
-    <p>
-        <li>
-            メンバー：<%= member.uid  %></br>
-            役職：<%= member.jid  %></br>
-            作業名：<%= task.name  %></br>
-            締切：<%= task.date  %></br>
-            内容：<%= task.content  %></br>
-        </li>
-    </p>
-<% end %>
-
-<% if current_manager %>
-    <%= link_to "戻る" ,tasks_index_path %>
-<% else current_member %>
-    <%= link_to "戻る" ,tlogins_main_path %>
-<% end %>
+<div class="tasks_body">
+    <div class="tasks_title">
+        <h1>終了タスク一覧</h1>
+    </div>
+    <div class="tasks_column"> 
+        <div class="tasks_subtitle">
+            <p>以下のタスクが終了しています</p>
+        </div>
+        <div class="tasks_item">
+            <% @finishes.each do |e| %>
+            <% task = Task.find(e.task_id) %>
+            <% member = Member.find(e.member_id) %>
+                <p>
+                    <li>
+                        メンバー：<%= member.uid  %></br>
+                        役職：<%= member.jid  %></br>
+                        作業名：<%= task.name  %></br>
+                        締切：<%= task.date  %></br>
+                        内容：<%= task.content  %></br>
+                    </li>
+                </p>
+            <% end %>
+        </div>
+    </div></br>
+    
+    <% if current_manager %>
+        <%= link_to "戻る" ,tasks_index_path, class: "tasks_button" %>
+    <% else current_member %>
+        <%= link_to "戻る" ,tlogins_main_path, class: "tasks_button" %>
+    <% end %>
+</div>    

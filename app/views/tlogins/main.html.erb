@@ -2,24 +2,40 @@
     @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Kiwi+Maru&display=swap');
 </style>
 
-<p>役職 / 作業名 / 締め切り</p>
-<% @tasks = Task.all %>
-<% @tasks.each do |e| %>
-<% finish = Finish.find_by(task_id: e.id) %>
-<% if !finish || finish.member_id == current_member.id %>
-    <p>
-        <li>
-            <%= e.job %>/<%= e.name %>/<%= e.date %>
-            <%=link_to '表示', "/tasks/#{e.id}"%>
-            <% if e.completed?(current_member) %>
-                <%= link_to '完了解除', finish_path(e), data: { turbo_method: :delete } %>
-            <% else %>
-                <%= link_to '完了', finish_index_path(task_id: e.id), data: { "turbo_method": :post }  %>
+<div class="tasks_body">
+    
+    <div class="tasks_title">
+        <h1>メンバーページ<h1>
+    </div>
+    
+    <div class="tasks_column">    
+        <div class="tasks_subtitle">
+            <p>作業一覧</p>
+        </div>
+        <div class="tasks_item">
+            <p>役職 / 作業名 / 締め切り</p>
+            <% @tasks = Task.all %>
+            <% @tasks.each do |e| %>
+            <% finish = Finish.find_by(task_id: e.id) %>
+            <% if !finish || finish.member_id == current_member.id %>
+                <p>
+                    <li>
+                        <%= e.job %>/<%= e.name %>/<%= e.date %>
+                        <%=link_to '表示', "/tasks/#{e.id}"%>
+                        <% if e.completed?(current_member) %>
+                            <%= link_to '完了解除', finish_path(e), data: { turbo_method: :delete } %>
+                        <% else %>
+                            <%= link_to '完了', finish_index_path(task_id: e.id), data: { "turbo_method": :post }  %>
+                        <% end %>
+                    </li>
+                </p>
+            <% end %>   
             <% end %>
-        </li>
-    </p>
-<% end %>   
-<% end %>
+        </div>
+    </div></br>
+    
+    <%= link_to "メッセージ" ,group_chats_index_path, class: "tasks_button" %></br>
+    <%= link_to "終了タスク一覧" , tasks_finish_path, class: "tasks_button" %></br>
+    <%=link_to 'ログアウト', tlogins_logout_path, class: "tasks_button" %></br>
 
-<%= link_to "終了タスク一覧" , tasks_finish_path %>
-<%=link_to 'ログアウト', tlogins_logout_path %>
+</div>
