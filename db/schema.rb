@@ -41,7 +41,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_16_120539) do
 
   create_table "members", force: :cascade do |t|
     t.string "uid"
-    t.string "gid"
     t.string "pass"
     t.string "jid"
     t.datetime "created_at", null: false
@@ -60,8 +59,8 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_16_120539) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.string "date"
-    t.string "time"
+    t.integer "date"
+    t.integer "time"
     t.string "job"
     t.string "content"
     t.datetime "created_at", null: false
